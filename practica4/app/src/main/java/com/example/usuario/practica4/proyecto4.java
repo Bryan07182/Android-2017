@@ -8,10 +8,16 @@ public class proyecto4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String nombre = "Bryan";
-        String apellido = "Peña";
-        Toast toast = Toast.makeText(this, nombre+ " "+apellido,Toast.LENGTH_LONG);
-        toast.show();
+        int tortas = 3;
+        int precio = 40;
+        int total = tortas * precio;
+        if (total>80){
+            Toast toast = Toast.makeText(getApplicationContext(), "Tiene una soda gratis woow XD", Toast.LENGTH_LONG);
+            toast.show();
+        }else {
+            Toast toast = Toast.makeText(getApplicationContext(), "No hay soda amigo :( ", Toast.LENGTH_LONG);
+            toast.show();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proyecto4);
     }
