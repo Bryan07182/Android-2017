@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.usuario.practica8.MainActivity" >
+    <item
+        android:id="@+id/btnro"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        android:orderInCategory="100"
+        android:title="nombre y apellido"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/btndo"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        android:orderInCategory="101"
+        android:title="apellido y nombre" />
+    <item
+        android:id="@+id/btn3ro"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:orderInCategory="102"
+        android:title="borrar" />
+</menu>
