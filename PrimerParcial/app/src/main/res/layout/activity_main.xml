@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ld1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.usuario.primerparcial.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="371dp"
+        android:layout_height="502dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageButton
+            android:id="@+id/btnI2"
+            android:layout_width="85dp"
+            android:layout_height="97dp"
+            android:layout_alignStart="@+id/btnI1"
+            android:layout_below="@+id/btnI1"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/manzana"
+            tools:layout_editor_absoluteX="255dp"
+            tools:layout_editor_absoluteY="219dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="143dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/manzanas"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ImageButton
+            android:id="@+id/btnI1"
+            android:layout_width="91dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/imageView"
+            app:srcCompat="@drawable/manzana"
+            tools:layout_editor_absoluteX="255dp"
+            tools:layout_editor_absoluteY="119dp" />
+
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="295dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Calcular"
+            tools:layout_editor_absoluteX="66dp"
+            tools:layout_editor_absoluteY="453dp" />
+
+        <EditText
+            android:id="@+id/ed1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btnI1"
+            android:layout_alignStart="@+id/btnCalcular"
+            android:ems="10"
+            android:inputType="number"
+            android:text="0" />
+
+        <EditText
+            android:id="@+id/ed2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btnI2"
+            android:layout_alignStart="@+id/ed1"
+            android:layout_marginBottom="23dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ed1"
+            android:layout_alignStart="@+id/ed1"
+            android:text="Produccion total" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ed2"
+            android:layout_alignStart="@+id/ed2"
+            android:text="Produccion actual" />
+
+        <Button
+            android:id="@+id/btnCinco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ed2"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:text="+5" />
+
+        <Button
+            android:id="@+id/btnQuince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnCinco"
+            android:layout_alignBottom="@+id/btnCinco"
+            android:layout_toEndOf="@+id/btnCinco"
+            android:text="+15" />
+
+        <Button
+            android:id="@+id/btnTreinta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnQuince"
+            android:layout_alignBottom="@+id/btnQuince"
+            android:layout_toStartOf="@+id/btnI2"
+            android:text="+30" />
+
+        <Button
+            android:id="@+id/btnCincuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnQuince"
+            android:layout_alignBottom="@+id/btnQuince"
+            android:layout_alignParentEnd="true"
+            android:text="+50" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btnCalcular"
+            android:layout_below="@+id/btnCinco"
+            android:layout_marginTop="21dp"
+            android:text="Porcentaje" />
+
+        <EditText
+            android:id="@+id/ed3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_below="@+id/textView5"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ed3"
+            android:layout_toStartOf="@+id/btnCincuenta"
+            android:text="Mensaje" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
