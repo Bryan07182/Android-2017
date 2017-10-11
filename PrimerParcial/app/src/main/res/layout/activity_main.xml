@@ -8,7 +8,7 @@
     tools:context="com.example.usuario.primerparcial.MainActivity">
 
     <RelativeLayout
-        android:id="@+id/layout1"
+        android:id="@+id/am"
         android:layout_width="371dp"
         android:layout_height="502dp"
         tools:layout_editor_absoluteX="8dp"

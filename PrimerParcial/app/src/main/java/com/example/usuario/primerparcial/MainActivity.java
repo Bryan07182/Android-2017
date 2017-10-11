@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText n1,n2,n3;
     TextView t1;
     ImageButton Ibtn1, Ibtn2;
+    RelativeLayout l;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,70 +32,91 @@ public class MainActivity extends AppCompatActivity {
         n1=(EditText)findViewById(R.id.ed1);
         n2=(EditText)findViewById(R.id.ed2);
         n3=(EditText)findViewById(R.id.ed3);
-        //t1=(TextView)findViewById(R.id.tv1);
         Ibtn1=(ImageButton)findViewById(R.id.btnI1);
         Ibtn2=(ImageButton)findViewById(R.id.btnI2);
+        l = (RelativeLayout) findViewById(R.id.am);
 
 
         cinco.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                int n=Integer.parseInt(n2.getText().toString());
-                int total=n+5;
-                n2.setText(String.valueOf(total));
+                String es = n1.getText().toString();
+
+                if (es.isEmpty()) {
+
+                    n2.setText("0");
+                    Toast.makeText(getApplicationContext(), "Ingrese total", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    int b=Integer.parseInt(n2.getText().toString());
+                    b=b+5;
+                    n2.setText(String.valueOf(b));
+
+                }
+
             }
         });
 
         quince.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                int n=Integer.parseInt(n2.getText().toString());
-                int total=n+15;
-                n2.setText(String.valueOf(total));
+                String es = n1.getText().toString();
+
+                if (es.isEmpty()) {
+
+                    n2.setText("0");
+                    Toast.makeText(getApplicationContext(), "Ingrese total", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    int b=Integer.parseInt(n2.getText().toString());
+                    b=b+15;
+                    n2.setText(String.valueOf(b));
+
+                }
+
             }
         });
 
         treinta.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                int n=Integer.parseInt(n2.getText().toString());
-                int total=n+30;
-                n2.setText(String.valueOf(total));
+                String es = n1.getText().toString();
+
+                if (es.isEmpty()) {
+
+                    n2.setText("0");
+                    Toast.makeText(getApplicationContext(), "Ingrese total", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    int b=Integer.parseInt(n2.getText().toString());
+                    b=b+30;
+                    n2.setText(String.valueOf(b));
+
+                }
+
             }
         });
 
         cincuenta.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                int n=Integer.parseInt(n2.getText().toString());
-                int total=n+50;
-                n2.setText(String.valueOf(total));
+                String es = n1.getText().toString();
 
-            }
-        });
+                if (es.isEmpty()) {
 
+                    n2.setText("0");
+                    Toast.makeText(getApplicationContext(), "Ingrese total", Toast.LENGTH_LONG).show();
 
-        Ibtn1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+                } else {
 
-                int n=Integer.parseInt(n1.getText().toString());
-                int total=(n*80);
+                    int b=Integer.parseInt(n2.getText().toString());
+                    b=b+50;
+                    n2.setText(String.valueOf(b));
 
-                Toast toast = Toast.makeText(getApplicationContext(), "espere que funcionara jeje", Toast.LENGTH_LONG);
-                toast.show();
-
-            }
-        });
-
-        Ibtn2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                int n=Integer.parseInt(n2.getText().toString());
-                int total=(n*80);
-
-                Toast toast = Toast.makeText(getApplicationContext(), "espere que funcionara jeje", Toast.LENGTH_LONG);
-                toast.show();
-
+                }
 
             }
         });
@@ -102,10 +124,50 @@ public class MainActivity extends AppCompatActivity {
         calcular.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                int n=Integer.parseInt(n1.getText().toString());
-                int nn=Integer.parseInt(n2.getText().toString());
-                int total=((n+nn) * 100/ 2);
-                n3.setText(String.valueOf(total));
+                int a=Integer.parseInt(n1.getText().toString());
+                int b=Integer.parseInt(n2.getText().toString());
+                int por=(b*100)/a;
+                n3.setText(String.valueOf(por+"%"));
+
+                if((a*.7)<=((por/100)*a)){
+
+                    l.setBackgroundColor(Color.parseColor("#FF0000"));
+
+                }else{
+
+                    l.setBackgroundColor(Color.parseColor("#ffffff"));
+
+                }
+
+            }
+        });
+
+        Ibtn1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                String es = n1.getText().toString();
+
+                if (es.isEmpty()) {
+
+                    Toast.makeText(getApplicationContext(), "Ingrese total", Toast.LENGTH_LONG).show();
+
+                }else{
+
+                    int a=Integer.parseInt(n2.getText().toString());
+                    int res=a*80;
+                    Toast.makeText(getApplicationContext(), String.valueOf(res)+" total", Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
+
+        Ibtn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                int a=Integer.parseInt(n2.getText().toString());
+                int res=a*80;
+                Toast.makeText(getApplicationContext(), String.valueOf(res)+" actual", Toast.LENGTH_LONG).show();
 
             }
         });
