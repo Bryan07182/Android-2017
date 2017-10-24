@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.usuario.examenparcialdos.Metodospago">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_marginStart="84dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:id="@+id/rd1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Efectivo" />
+
+        <RadioButton
+            android:id="@+id/rd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tarjeta" />
+
+        <RadioButton
+            android:id="@+id/rd3"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignBottom="@+id/radioGroup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="31dp"
+            android:layout_weight="1"
+            android:text="Paypal" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginStart="39dp"
+        android:text="Pagar"
+        android:layout_alignBottom="@+id/radioGroup"
+        android:layout_toEndOf="@+id/radioGroup" />
+
+</RelativeLayout>
