@@ -1,13 +1,14 @@
 package com.example.usuario.mapitagoogle;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -48,7 +49,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Moscow));
 
         LatLng Mexico = new LatLng(19.432314, -99.153809);
-        mMap.addMarker(new MarkerOptions().position(Mexico).title("Que royo Mexico"));
+        mMap.addMarker(new MarkerOptions().position(Mexico).title("Que rollo Mexico"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Mexico));
+
+        //28.6041102,-106.1263012
+        LatLng gelos = new LatLng(28.6041102,-106.1263012);
+        mMap.addMarker(new MarkerOptions().position(gelos).title("Burros"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(gelos));
+
+
+        //zoom
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(),15));
+                // Zoom in, animating the camera.
+                mMap.animateCamera(CameraUpdateFactory.zoomIn());
+                // Zoom out to zoom level 10, animating with a duration of 2 seconds.
+                mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+                return true;
+            }
+        });
     }
 }
