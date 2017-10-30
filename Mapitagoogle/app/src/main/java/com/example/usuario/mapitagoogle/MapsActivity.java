@@ -1,5 +1,7 @@
 package com.example.usuario.mapitagoogle;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
@@ -7,6 +9,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -57,6 +60,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(gelos).title("Burros"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(gelos));
 
+
+
+        // Marcador personalizado
+        MarkerOptions marker = new MarkerOptions().position(new LatLng(19.442893, -99.134222));
+        BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.marcadorper,null);
+        Bitmap b=bitmapdraw.getBitmap();
+        Bitmap smallMarker = Bitmap.createScaledBitmap(b, 100, 100, false);
+        marker.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
+        mMap.addMarker(marker);
 
         //zoom
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
